@@ -1,1 +1,56 @@
-[{"location":"kolkata","tempC":33,"feelsLike":20,"condition":"Clear"},{"location":"london","tempC":4,"feelsLike":20,"condition":"Sunny"},{"location":"san fransisco","tempC":25,"feelsLike":18,"condition":"Rainy"},{"location":"mumbai","tempC":31,"feelsLike":21,"condition":"Sunny"},{"location":"chennai","tempC":29,"feelsLike":30,"condition":"Sunny"},{"location":"orissa","tempC":1,"feelsLike":20,"condition":"Sunny"},{"location":"agra","tempC":30.2,"feelsLike":20,"condition":"Sunny"},{"location":"bangalore","tempC":26,"feelsLike":20,"condition":"Sunny"},{"location":"gujarat","tempC":30,"feelsLike":20,"condition":"Sunny"},{"location":"hyderabad","tempC":31,"feelsLike":20,"condition":"Sunny"}]
+[
+  {
+    "location": "Kolkata",
+    "tempC": 33,
+    "feelsLike": 37,
+    "condition": 1
+  },
+  {
+    "location": "London",
+    "tempC": 4,
+    "feelsLike": 2,
+    "condition": 1
+  },
+  {
+    "location": "Barcelona",
+    "tempC": 15,
+    "feelsLike": 18,
+    "condition": 1
+  },
+  {
+    "location": "New Delhi",
+    "tempC": 34,
+    "feelsLike": 34,
+    "condition": 1
+  },
+  {
+    "location": "Oslo",
+    "tempC": 1,
+    "feelsLike": 0,
+    "condition": 0
+  },
+  {
+    "location": "New York",
+    "tempC": 8,
+    "feelsLike": 3,
+    "condition": 0
+  },
+  {
+    "location": "Tokyo",
+    "tempC": 12,
+    "feelsLike": 10,
+    "condition": 1
+  },
+  {
+    "location": "Paris",
+    "tempC": 14,
+    "feelsLike": 12,
+    "condition": 1
+  },
+  {
+    "location": "California",
+    "tempC": 22,
+    "feelsLike": 20,
+    "condition": 0
+  }
+]

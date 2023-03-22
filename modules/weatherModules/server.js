@@ -39,7 +39,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const port = 7000;
+const port = 2000;
 
 
 function getData() {

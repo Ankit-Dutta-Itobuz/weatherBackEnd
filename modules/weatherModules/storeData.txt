@@ -1,8 +1,8 @@
 [
   {
     "location": "Kolkata",
-    "tempC": 33,
-    "feelsLike": 37,
+    "tempC": 100,
+    "feelsLike": 137,
     "condition": 1
   },
   {

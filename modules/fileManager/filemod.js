@@ -62,11 +62,7 @@ if (process.argv[2] === undefined) {
 
     //create File
     if (operation === 'CF'){
-        var str = "";
-        for (let i = 5; i < input.length; i++) {
-            str = str +" "+ input[i];
-        }
-        fs.writeFileSync(pathName + fileName +'/'+ input[4], str, 
+        fs.writeFileSync(pathName + fileName +'/'+ input[4], input[5], 
         console.log('File is created successfully!')
         )
         print();
@@ -81,11 +77,7 @@ if (process.argv[2] === undefined) {
 
     //update File 
     if (operation === 'UF'){
-        var str = "";
-        for (let i = 5; i < input.length; i++) {
-            str = str +" "+ input[i];
-        }
-        fs.writeFileSync(pathName + fileName +'/'+ input[4], str, 
+        fs.writeFileSync(pathName + fileName +'/'+ input[4], input[5], 
         console.log('File is updated successfully!')
         );
         print();

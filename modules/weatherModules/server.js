@@ -1,41 +1,3 @@
-// const data = {
-//     data: {
-//         location: 'kolkata',
-//     },
-//     name: 'visal',
-//     age: 'OK'
-// };
-
-// function getRoutesBasedData(route, data) {
-//     let status = 200;
-//     console.log('route', route);
-//     return JSON.stringify({
-//         apiData: data,
-//         status,
-//         route,
-//         message: 'hey i am running ...'
-//     })
-// }
-
-// function getRequestData(req) {
-//     if (req.url === '/') {
-//        return getRoutesBasedData(req.url, data)
-//     } else if(req.url === '/name') {
-//         return  getRoutesBasedData(req.url, data)
-//     } else {
-//         return getRoutesBasedData('NOT FOUND', data)
-//     }
-// }
-
-// const ourServer = http.createServer((req, res) => {
-//     res.writeHead(200, { 'Content-Type': 'application/html'});
-//     res.end(getRequestData(req));
-// });
-
-// ourServer.listen(port, () => {
-//     console.log('port ... ', port);
-// })
-
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -62,11 +24,11 @@ function getData() {
 const data = getData();
 
 function getRouteData(route){
-    let status =200;
+    let status = 200;
     let locData = {};
     let loc = route.split("/")[1];
     console.log(loc);
-    for(let i=0; i<data.length; i++){
+    for(let i = 0; i<data.length; i++){
         if(data[i].location === loc) {
             locData = data[i];
         }
@@ -90,7 +52,7 @@ server.listen(port,  ()=>{
 });
 
 function getRequestData(req) {
-    if (req.url=="/") {
+    if (req.url === "/") {
         return JSON.stringify(data);
     }
     else {

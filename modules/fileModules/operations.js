@@ -2,9 +2,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const process = require('node:process');
-
-
-
 //to take input from commandinput
 let input = process.argv;
 // let operation = input[2];
@@ -66,6 +63,4 @@ const updateFolder = () => {
         console.log('Folder name is updated successfully!');
     });
 }
-
-
 module.exports={createFile, readFile, updateFile, deleteFile, createFolder, readFolder, updateFolder, deleteFolder};

@@ -30,73 +30,57 @@ if (process.argv[2] === undefined) {
    //display the Commands to perform the Operations
    else { 
     if (operation === '1'){
-        console.log('To perform type : node filSystem.js RF "Filename" ')}
+        console.log('To perform type : node filSystem.js readFile "Filename" ')}
     if (operation === '2'){
-        console.log('To perform type : node filSystem.js CF "Foldername" "Filename" "content" ')}
+        console.log('To perform type : node filSystem.js createFile "Foldername" "Filename" "content" ')}
     if (operation === '3'){
-        console.log('To perform type : node filSystem.js UF "Foldername" "Filename" "content to be updated in the file"')}
+        console.log('To perform type : node filSystem.js updateFile "Foldername" "Filename" "content to be updated in the file"')}
     if (operation === '4'){
-        console.log('To perform type : node filSystem.js DF "Foldername" "Filename" ')}
+        console.log('To perform type : node filSystem.js deleteFile "Foldername" "Filename" ')}
     if (operation === '5'){
-        console.log('To perform type : node filSystem.js CFO "Foldername" "path/"')}
+        console.log('To perform type : node filSystem.js createFolder "Foldername" "path/"')}
     if (operation === '6'){
-        console.log('To perform type : node filSystem.js DFO "Foldername" "path/"')}
+        console.log('To perform type : node filSystem.js deleteFolder "Foldername" "path/"')}
     if (operation === '7'){
-        console.log('To perform type : node filSystem.js RFO "Foldername" "path/"')}
+        console.log('To perform type : node filSystem.js readFolder "Foldername" "path/"')}
     if (operation === '8'){
-        console.log('To perform type : node filSystem.js UFO "Original Foldername" "New Foldername" "path/"')}
+        console.log('To perform type : node filSystem.js updateFolder "Original Foldername" "New Foldername" "path/"')}
     if (operation === '9'){
         process.exit();
     }
 
     //read File
-    if (operation === 'RF'){
+    if (operation === 'readFile'){
         readFile();
-          
     }
-
     //create File
-    if (operation === 'CF'){
-        createFile();
-        
+    if (operation === 'createFile'){
+        createFile();  
     }
-
     //delete File
-    if (operation === 'DF'){
+    if (operation === 'deleteFile'){
         deleteFile();
-        
     }
-
     //update File 
-    if (operation === 'UF'){
+    if (operation === 'updateFile'){
         updateFile();
-        
     }
-
     //create folder 
-    if(operation === 'CFO'){
+    if(operation === 'createFolder'){
         createFolder();
-        
     } 
-
     //delete Folder
-    if(operation === 'DFO'){
+    if(operation === 'deleteFolder'){
         deleteFolder();
-        
     }
-
     //read Folder
-    if(operation === 'RFO'){
+    if(operation === 'readFolder'){
         readFolder();
-        
     }
-
     //update Folder
-    if(operation === 'UFO'){
+    if(operation === 'updateFolder'){
     updateFolder();
-    
     }
-
 }
 
 //next update multiline content input

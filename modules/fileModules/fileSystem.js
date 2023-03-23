@@ -7,19 +7,19 @@ const process = require('node:process');
 let input = process.argv;
 let operation = input[2];
 let fileName = input[3];
-var pathName = path.dirname(input[1]) + '/';
+let pathName = path.dirname(input[1]) + '/';
 
 //display all the Operations
 function print(){
-    console.log('Type "node filemod.js 1" to Read File '); 
-    console.log('Type "node filemod.js 2" to Create File'); 
-    console.log('Type "node filemod.js 3" to Update File'); 
-    console.log('Type "node filemod.js 4" to Delete File'); 
-    console.log('Type "node filemod.js 5" to Create Folder'); 
-    console.log('Type "node filemod.js 6" to Delete Folder'); 
-    console.log('Type "node filemod.js 7" to Read Folder'); 
-    console.log('Type "node filemod.js 8" to Update Folder'); 
-    console.log('Type "node filemod.js 9" to Exit'); 
+    console.log('Type "node filSystem.js 1" to Read File '); 
+    console.log('Type "node filSystem.js 2" to Create File'); 
+    console.log('Type "node filSystem.js 3" to Update File'); 
+    console.log('Type "node filSystem.js 4" to Delete File'); 
+    console.log('Type "node filSystem.js 5" to Create Folder'); 
+    console.log('Type "node filSystem.js 6" to Delete Folder'); 
+    console.log('Type "node filSystem.js 7" to Read Folder'); 
+    console.log('Type "node filSystem.js 8" to Update Folder'); 
+    console.log('Type "node filSystem.js 9" to Exit'); 
     console.log('\n'); 
 }
 
@@ -30,21 +30,21 @@ if (process.argv[2] === undefined) {
    //display the Commands to perform the Operations
    else { 
     if (operation === '1'){
-        console.log('To perform type : node filemod.js RF "Filename" ')}
+        console.log('To perform type : node filSystem.js RF "Filename" ')}
     if (operation === '2'){
-        console.log('To perform type : node filemod.js CF "Foldername" "Filename" "content" ')}
+        console.log('To perform type : node filSystem.js CF "Foldername" "Filename" "content" ')}
     if (operation === '3'){
-        console.log('To perform type : node filemod.js UF "Foldername" "Filename" "content to be updated in the file"')}
+        console.log('To perform type : node filSystem.js UF "Foldername" "Filename" "content to be updated in the file"')}
     if (operation === '4'){
-        console.log('To perform type : node filemod.js DF "Foldername" "Filename" ')}
+        console.log('To perform type : node filSystem.js DF "Foldername" "Filename" ')}
     if (operation === '5'){
-        console.log('To perform type : node filemod.js CFO "Foldername" "path/"')}
+        console.log('To perform type : node filSystem.js CFO "Foldername" "path/"')}
     if (operation === '6'){
-        console.log('To perform type : node filemod.js DFO "Foldername" "path/"')}
+        console.log('To perform type : node filSystem.js DFO "Foldername" "path/"')}
     if (operation === '7'){
-        console.log('To perform type : node filemod.js RFO "Foldername" "path/"')}
+        console.log('To perform type : node filSystem.js RFO "Foldername" "path/"')}
     if (operation === '8'){
-        console.log('To perform type : node filemod.js UFO "Original Foldername" "New Foldername" "path/"')}
+        console.log('To perform type : node filSystem.js UFO "Original Foldername" "New Foldername" "path/"')}
     if (operation === '9'){
         process.exit();
     }

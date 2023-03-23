@@ -6,7 +6,6 @@ const port = 2000;
 
 function getData() {
     try{
-        // let dataPath = path.resolve("storeData.txt");
         // let dataPath = new URL("storeData.txt", import.meta.url);//es6
         let dataPath = path.join(__dirname,'storeData.txt');
         console.log(dataPath);

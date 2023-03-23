@@ -94,7 +94,7 @@ if (process.argv[2] === undefined) {
 
     //delete Folder
     if(operation === 'DFO'){
-        fs.rmdirSync(pathName + input[4] + fileName, err => {
+        fs.rmdir(pathName + input[4] + fileName, err => {
             if (err) {
               throw err;
             }
@@ -122,3 +122,5 @@ if (process.argv[2] === undefined) {
     }
 
 }
+
+//next update multiline content input

@@ -1,13 +1,13 @@
 //requiring the imp modules
-const fs = require('node:fs');
-const path = require('node:path');
+// const fs = require('node:fs');
+// const path = require('node:path');
 const process = require('node:process');
-
+const {createFile, readFile, updateFile, deleteFile, createFolder, readFolder, updateFolder, deleteFolder} = require('./operations')
 //to take input from commandinput
 let input = process.argv;
 let operation = input[2];
-let fileName = input[3];
-let pathName = path.dirname(input[1]) + '/';
+// let fileName = input[3];
+// let pathName = path.dirname(input[1]) + '/';
 
 //display all the Operations
 function print(){
@@ -51,74 +51,50 @@ if (process.argv[2] === undefined) {
 
     //read File
     if (operation === 'RF'){
-        try {
-            const data = fs.readFileSync(fileName, 'utf8');
-            console.log(data);
-          } catch (err) {
-            console.error(err);
-          }
-          print();
+        readFile();
+          
     }
 
     //create File
     if (operation === 'CF'){
-        fs.writeFileSync(pathName + fileName +'/'+ input[4], input[5], 
-        console.log('File is created successfully!')
-        )
-        print();
+        createFile();
+        
     }
 
     //delete File
     if (operation === 'DF'){
-        fs.unlinkSync(pathName + fileName +'/'+ input[4]);
-        console.log('File deleted successfully!')
-        print();
+        deleteFile();
+        
     }
 
     //update File 
     if (operation === 'UF'){
-        fs.writeFileSync(pathName + fileName +'/'+ input[4], input[5], 
-        console.log('File is updated successfully!')
-        );
-        print();
+        updateFile();
+        
     }
 
     //create folder 
     if(operation === 'CFO'){
-        if (!fs.existsSync(pathName + input[4] + fileName)) {
-            fs.mkdirSync(pathName + input[4] + fileName);
-        }
-            console.log('Folder is created successfully!')
-            print();
+        createFolder();
+        
     } 
 
     //delete Folder
     if(operation === 'DFO'){
-        fs.rmdir(pathName + input[4] + fileName, err => {
-            if (err) {
-              throw err;
-            }
-            console.log(`Folder ${fileName} is deleted successfully!`);
-        });
-        print();
+        deleteFolder();
+        
     }
 
-    //read File
+    //read Folder
     if(operation === 'RFO'){
-        console.log('\n The '+fileName+' directory consists : ');
-        console.log(fs.readdirSync(pathName+ input[4] +fileName));
-        print();
+        readFolder();
+        
     }
 
     //update Folder
     if(operation === 'UFO'){
-    fs.rename(pathName + input[5] +fileName, pathName + input[5] +input[4], err => {
-        if (err) {
-        console.error(err);
-        }
-    });
-    console.log('Folder name is updated successfully!');
-    print();
+    updateFolder();
+    
     }
 
 }

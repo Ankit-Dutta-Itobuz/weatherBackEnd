@@ -1,117 +1,112 @@
-//requiring the imp modules
-// const fs = require('node:fs');
-// const path = require('node:path');
-const {
-    createFile,
-    readFile,
-    updateFile,
-    deleteFile,
-    createFolder,
-    readFolder,
-    updateFolder,
-    deleteFolder,
-  } = require("./operations");
-const process = require("node:process");
-//to take input from commandinput
-let input = process.argv;
-let operation = input[2];
-// let fileName = input[3];
-// let pathName = path.dirname(input[1]) + '/';
+import * as fileOperation from "./fileOperation.mjs";
 
-//display all the Operations
+let input;
+let OperationNum;
+let fileName;
+const blank = undefined;
+
+export const path = process.cwd();
+export let file;
+export let content;
+print();
+process.stdin.on("data", function (content) {
+  input = content.toString().trim().split(" ");
+  OperationNum = Number(input[0]);
+  fileName = input[1];
+  content = input[2];
+  operationDisp();
+});
+
+
 function print() {
-  console.log('Type "node filSystem.js 1" to Read File ');
-  console.log('Type "node filSystem.js 2" to Create File');
-  console.log('Type "node filSystem.js 3" to Update File');
-  console.log('Type "node filSystem.js 4" to Delete File');
-  console.log('Type "node filSystem.js 5" to Create Folder');
-  console.log('Type "node filSystem.js 6" to Delete Folder');
-  console.log('Type "node filSystem.js 7" to Read Folder');
-  console.log('Type "node filSystem.js 8" to Update Folder');
-  console.log('Type "node filSystem.js 9" to Exit');
-  console.log("\n");
+  console.log("To Exit Type: 0");
+  console.log("To Create File Type: 1");
+  console.log("To Read File Type: 2");
+  console.log("To Update File Type: 3");
+  console.log("To Delete File Type: 4");
+  console.log("To Create Folder Type: 5");
+  console.log("To Read Folder Type: 6");
+  console.log("To Update Folder Type: 7 ");
+  console.log("To Delete Folder Type: 8 ");
 }
-
-//for Invalid Input
-if (process.argv[2] === undefined) {
-  print();
-}
-//display the Commands to perform the Operations
-else {
-  if (operation === "1") {
-    console.log('To perform type : node filSystem.js readFile "Filename" ');
-  }
-  if (operation === "2") {
-    console.log(
-      'To perform type : node filSystem.js createFile "Foldername" "Filename" "content" '
-    );
-  }
-  if (operation === "3") {
-    console.log(
-      'To perform type : node filSystem.js updateFile "Foldername" "Filename" "content to be updated in the file"'
-    );
-  }
-  if (operation === "4") {
-    console.log(
-      'To perform type : node filSystem.js deleteFile "Foldername" "Filename" '
-    );
-  }
-  if (operation === "5") {
-    console.log(
-      'To perform type : node filSystem.js createFolder "Foldername" "path/"'
-    );
-  }
-  if (operation === "6") {
-    console.log(
-      'To perform type : node filSystem.js deleteFolder "Foldername" "path/"'
-    );
-  }
-  if (operation === "7") {
-    console.log(
-      'To perform type : node filSystem.js readFolder "Foldername" "path/"'
-    );
-  }
-  if (operation === "8") {
-    console.log(
-      'To perform type : node filSystem.js updateFolder "Original Foldername" "New Foldername" "path/"'
-    );
-  }
-  if (operation === "9") {
+function operationDisp() {
+  if (OperationNum === 0) {
+    console.log("File System Ended");
     process.exit();
+  } else if (OperationNum === 1) {
+    
+    if (fileName === blank) {
+      console.log("To Create file type 1 then file name then the content");
+    }
+    // console.log(OperationNum);
+  } else if (OperationNum === 2) {
+    
+    if (fileName === blank) {
+      console.log("To read file type 2 then file name");
+    }
+  } else if (OperationNum === 3) {
+    
+    console.log("To update file file type 3 then file name then the new content");
+  } else if (OperationNum === 4) {
+    
+    if (fileName === blank) {
+      console.log("To delete file type 4 then file name");
+    }
+  } else if (OperationNum === 5) {
+    
+    if (fileName === blank) {
+      console.log("To Create folder type 5 then folder name");
+    }
+  } else if (OperationNum === 6) {
+    
+    if (fileName === blank) {
+      console.log("To Read folder type 6 then folder name");
+    }
+  } else if (OperationNum === 7) {
+    
+    if (fileName === blank) {
+      console.log("To Update folder type 7 then folder name then the new name");
+    }
+  } else if (OperationNum === 8) {
+    
+    if (fileName === blank) {
+      console.log("To Delete folder type 8 then folder name");
+    }
+  } else {
+    console.log("Invalid Input");
   }
+  dataOperation();
+}
 
-  //read File
-  if (operation === "readFile") {
-    readFile();
-  }
-  //create File
-  if (operation === "createFile") {
-    createFile();
-  }
-  //delete File
-  if (operation === "deleteFile") {
-    deleteFile();
-  }
-  //update File
-  if (operation === "updateFile") {
-    updateFile();
-  }
-  //create folder
-  if (operation === "createFolder") {
-    createFolder();
-  }
-  //delete Folder
-  if (operation === "deleteFolder") {
-    deleteFolder();
-  }
-  //read Folder
-  if (operation === "readFolder") {
-    readFolder();
-  }
-  //update Folder
-  if (operation === "updateFolder") {
-    updateFolder();
+function dataOperation() {
+    if (fileName !== blank && OperationNum === 1) {
+    file = fileName;
+    content = input[2];
+    fileOperation.fileCreate();
+  } else if (fileName !== blank && OperationNum === 2) {
+    file = fileName;
+    fileOperation.fileRead();
+  } else if (fileName !== blank && OperationNum === 3) {
+    file = fileName;
+    content = input[2];
+    fileOperation.fileUpdate();
+  } else if (fileName !== blank && OperationNum === 4) {
+    file = fileName;
+    fileOperation.fileDelete();
+  } else if (fileName !== blank && OperationNum === 5) {
+    file = fileName;
+    fileOperation.folderCreate();
+  } else if (fileName !== blank && OperationNum === 6) {
+    file = fileName;
+    fileOperation.folderRead();
+  } else if (fileName !== blank && OperationNum === 7) {
+    file = fileName;
+    content = input[2];
+    fileOperation.folderUpdate();
+  } else if (fileName !== blank && OperationNum === 8) {
+    file = fileName;
+    fileOperation.folderDelete();
   }
 }
 
-//next update multiline content input
+
